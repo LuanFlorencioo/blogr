@@ -1,0 +1,33 @@
+@import "https://fonts.googleapis.com/css2?family=Overpass:wght@300;600&family=Ubuntu:wght@400;500;700&display=swap";
+@import "app/styles/fonts.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: none;
+}
+
+html {
+  font-size: 10px;
+  font-family: $overpass;
+}
+
+body {
+  width: 100%;
+  position: relative;
+}
+
+button {
+  cursor: pointer;
+  background: transparent;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  color: unset;
+  text-decoration: unset;
+}
