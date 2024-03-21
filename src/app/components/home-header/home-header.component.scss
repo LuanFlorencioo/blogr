@@ -1,0 +1,58 @@
+@import "../../styles/colors.scss";
+@import "../../styles/fonts.scss";
+
+.header-root {
+  width: 100%;
+  border-radius: 0.8rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2.4rem;
+}
+
+.logo {
+  width: 8rem;
+  height: 3.2rem;
+  object-fit: contain;
+}
+
+.button-hamburger {
+  width: max-content;
+  height: 3.2rem;
+  padding-left: 1.6rem;
+
+  img {
+    object-fit: contain;
+  }
+}
+
+app-navbar {
+  width: 100%;
+  position: absolute;
+  top: 8.2rem;
+  left: 50%;
+  transform: translateX(-50%);
+
+  &[ng-reflect-is-showing="false"] {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .button-hamburger {
+    display: none;
+  }
+
+  app-navbar,
+  app-navbar[ng-reflect-is-showing="false"] {
+    display: block;
+    position: static;
+    transform: translateX(0);
+  }
+}
+
+@media (min-width: 998px) {
+  .header-root {
+    gap: 8rem;
+  }
+}

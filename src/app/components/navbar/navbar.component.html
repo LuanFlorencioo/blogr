@@ -1,0 +1,35 @@
+<nav class="navbar" [attr.data-is-showing]="isShowing">
+  <menu class="menu-dropdown-list">
+    @for (menu of menus; track menu.category) {
+    <li
+      class="menu-dropdown-item"
+      [attr.data-is-dropdown]="currentMenuDropdown === menu.category"
+    >
+      <button class="button-trigger" (click)="triggerDropdown(menu.category)">
+        {{ menu.category | titlecase }}
+        <img class="icon-arrow" [src]="iconArrowUrl" alt="Icon arrow" />
+      </button>
+
+      <ul class="link-list">
+        @for (link of menu.links; track link) {
+        <li class="link">
+          <a [routerLink]="'/' + link">
+            {{ link | titlecase }}
+          </a>
+        </li>
+        }
+      </ul>
+    </li>
+    }
+  </menu>
+
+  <div class="auth-buttons">
+    <a [routerLink]="'/login'">
+      <button class="button-login">Login</button>
+    </a>
+
+    <a [routerLink]="'/signup'">
+      <button class="button-signup">Sign Up</button>
+    </a>
+  </div>
+</nav>

@@ -1,0 +1,23 @@
+<header class="header-root">
+  <img
+    class="logo"
+    ngSrc="/assets/logo.svg"
+    alt="Logo Blogr"
+    width="100"
+    height="40"
+    priority
+  />
+
+  <button class="button-hamburger" (click)="triggerShowNavbar()">
+    <img
+      [src]="
+        isShowNavbar ? '/assets/icon-close.svg' : '/assets/icon-hamburger.svg'
+      "
+      alt="Icon hamburger"
+      width="26"
+      height="26"
+    />
+  </button>
+
+  <app-navbar [isShowing]="isShowNavbar" />
+</header>
