@@ -1,0 +1,327 @@
+@import "../../styles/colors.scss";
+@import "../../styles/fonts.scss";
+@import "../../styles/mixins.scss";
+
+.main {
+  width: 100%;
+  min-height: 100vh;
+  background: $white;
+  position: relative;
+  overflow: hidden;
+}
+
+.container {
+  @include container;
+}
+
+.text {
+  font-family: $overpass;
+  font-size: 1.6rem;
+  font-weight: 300;
+  line-height: 175%;
+  color: $dark-200;
+  text-align: center;
+
+  &::selection {
+    background: $dark-100;
+    color: $brand-200;
+  }
+}
+
+.article-editor {
+  width: 100%;
+  padding: 10rem 2.4rem;
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4rem;
+  }
+
+  h2,
+  h3 {
+    font-family: $overpass;
+    font-size: 2.8rem;
+    font-weight: 600;
+    color: $brand-100;
+    text-align: center;
+
+    &::selection {
+      background: $brand-400;
+      color: $white;
+    }
+  }
+
+  .illustration-editor {
+    width: 100%;
+    max-width: 37.5rem;
+    aspect-ratio: 1/1;
+    background-image: url("../../../assets/illustration-editor-mobile.svg");
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .box-text {
+    width: 100%;
+    max-width: 30rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.6rem;
+
+    h3 {
+      max-width: 28rem;
+    }
+  }
+
+  @media (min-width: 768px) {
+    h2 {
+      width: 100%;
+      font-size: 4rem;
+    }
+
+    .box-text {
+      max-width: 50rem;
+
+      h3 {
+        max-width: 100%;
+      }
+    }
+  }
+
+  @media (min-width: 1024px) {
+    padding: 14rem 2.4rem;
+    position: relative;
+
+    .container {
+      align-items: flex-start;
+      gap: 8rem;
+    }
+
+    .illustration-editor {
+      max-width: 60rem;
+      background-image: url("../../../assets/illustration-editor-desktop.svg");
+      background-size: contain;
+      background-position: center right;
+      position: absolute;
+      top: 50%;
+      right: 0;
+      z-index: 10;
+      transform: translateY(-50%);
+    }
+
+    .box-text {
+      z-index: 20;
+    }
+  }
+
+  @media (min-width: 1248px) {
+    .illustration-editor {
+      max-width: 75rem;
+    }
+
+    .box-text {
+      align-items: flex-start;
+      gap: 2.4rem;
+
+      .text {
+        text-align: start;
+      }
+    }
+  }
+
+  @media (min-width: 1440px) {
+    .illustration-editor {
+      max-width: 60rem;
+      background-image: url("../../../assets/illustration-editor-mobile.svg");
+      background-size: cover;
+      background-position: center center;
+      right: calc(50% - 60rem);
+    }
+  }
+}
+
+.article-phones {
+  width: 100%;
+  margin-top: 15rem;
+  background-image: url("../../../assets/bg-pattern-circles.svg"),
+    linear-gradient(to bottom, $brand-600, $brand-700);
+  background-repeat: no-repeat;
+  background-position: center -20rem, center center;
+  background-size: 60rem, 100%;
+  border-radius: 0 10rem 0;
+  position: relative;
+
+  .container {
+    padding: 25rem 0 12.2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .illustration-phones {
+    width: 100%;
+    max-width: 37.5rem;
+    aspect-ratio: 1/1;
+    background-image: url("../../../assets/illustration-phones-mobile.svg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    top: -15rem;
+    z-index: 10;
+  }
+
+  .content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.4rem;
+
+    h2 {
+      font-family: $overpass;
+      font-size: 3.6rem;
+      font-weight: 600;
+      text-align: center;
+      color: $white;
+
+      &::selection {
+        background: $brand-400;
+        color: $dark-100;
+      }
+    }
+
+    .text {
+      max-width: 30rem;
+      color: $dark-300;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    height: 40rem;
+    position: static;
+    margin-top: 0;
+    background-size: 100rem, 100%;
+    background-position: center -55rem, center center;
+
+    .container {
+      height: 100%;
+      padding: 0;
+      align-items: flex-end;
+      justify-content: center;
+      position: relative;
+    }
+
+    .illustration-phones {
+      max-width: 55rem;
+      background-image: url("../../../assets/illustration-phones-desktop.svg");
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+    }
+
+    .content {
+      max-width: 50rem;
+      padding-right: 1.6rem;
+      align-items: flex-start;
+
+      h2 {
+        text-align: start;
+      }
+
+      .text {
+        text-align: start;
+        max-width: 100%;
+      }
+    }
+  }
+}
+
+.article-laptop {
+  width: 100%;
+  padding: 8rem 0;
+  background: $white;
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3.2rem;
+  }
+
+  .illustration-laptop {
+    width: 100%;
+    max-width: 37.5rem;
+    aspect-ratio: 1/1;
+    background-image: url("../../../assets/illustration-laptop-mobile.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+  }
+
+  .box-text {
+    width: 100%;
+    max-width: 30rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.6rem;
+
+    h3 {
+      font-family: $overpass;
+      font-size: 2.8rem;
+      font-weight: 600;
+      color: $brand-100;
+      text-align: center;
+
+      &::selection {
+        background: $brand-400;
+        color: $white;
+      }
+    }
+  }
+
+  @media (min-width: 1024px) {
+    padding: 14rem 2.4rem;
+    position: relative;
+
+    .container {
+      align-items: flex-end;
+      gap: 8rem;
+    }
+
+    .illustration-laptop {
+      max-width: 60rem;
+      background-image: url("../../../assets/illustration-laptop-desktop.svg");
+      background-size: contain;
+      background-position: center left;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      z-index: 10;
+      transform: translateY(-50%);
+    }
+
+    .box-text {
+      max-width: 50rem;
+      align-items: flex-start;
+
+      h3,
+      .text {
+        text-align: start;
+      }
+    }
+  }
+
+  @media (min-width: 1440px) {
+    .illustration-laptop {
+      background-image: url("../../../assets/illustration-laptop-mobile.svg");
+      background-size: cover;
+      background-position: center center;
+      left: calc(50% - 60rem);
+    }
+  }
+}

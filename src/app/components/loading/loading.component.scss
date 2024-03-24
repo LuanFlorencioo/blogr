@@ -1,0 +1,76 @@
+@import "../../styles/colors.scss";
+
+.loading-screen {
+  width: 100%;
+  height: 100vh;
+  background-image: linear-gradient(to bottom right, $brand-200, $brand-300);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3.6rem;
+  opacity: 0;
+  animation: screen 0.4s forwards 0.2s;
+}
+
+.logo {
+  opacity: 0;
+  transform: translateY(10rem) scale(0.5);
+  animation: logo 0.4s forwards 0.4s;
+}
+
+.spinner-container {
+  width: max-content;
+  height: max-content;
+  opacity: 0;
+  transform: scale(0);
+  animation: spinner-container 0.2s forwards 1s;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  --c: radial-gradient(farthest-side, #ffffff 92%, #0000);
+  background: var(--c) 50% 0, var(--c) 50% 100%, var(--c) 100% 50%,
+    var(--c) 0 50%;
+  background-size: 9.6px 9.6px;
+  background-repeat: no-repeat;
+  animation: spinner 0.8s infinite;
+}
+
+@keyframes screen {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes logo {
+  from {
+    opacity: 0;
+    transform: translateY(10rem) scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes spinner-container {
+  from {
+    opacity: 0;
+    transform: scale(0);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes spinner {
+  to {
+    transform: rotate(0.5turn);
+  }
+}

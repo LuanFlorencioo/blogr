@@ -1,0 +1,21 @@
+<footer class="footer">
+  <div class="container">
+    <img [ngSrc]="logoImgUrl" alt="Logo Blogr" width="100" height="40" />
+
+    <menu class="box-pages">
+      @for (linkPage of linkPages; track linkPage.category) {
+      <li class="page-navegation">
+        <p class="page-type">{{ linkPage.category | titlecase }}</p>
+
+        <ul class="link-list">
+          @for (link of linkPage.links; track link) {
+          <li class="link">
+            <a [routerLink]="'/' + link">{{ link | titlecase }}</a>
+          </li>
+          }
+        </ul>
+      </li>
+      }
+    </menu>
+  </div>
+</footer>

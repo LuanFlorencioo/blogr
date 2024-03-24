@@ -1,0 +1,129 @@
+@import "../../styles/colors.scss";
+@import "../../styles/fonts.scss";
+
+.intro {
+  width: 100%;
+  height: calc(504px - 32px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4.8rem;
+}
+
+.apresentation {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.6rem;
+
+  .title {
+    font-family: $overpass;
+    font-size: 3.6rem;
+    font-weight: 600;
+    color: $white;
+    opacity: 0;
+    animation: show-text 0.4s forwards 0.2s;
+  }
+
+  .sub-title {
+    font-family: $overpass;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: $dark-300;
+    opacity: 0;
+    animation: show-text 0.4s forwards 0.4s;
+  }
+
+  .title::selection,
+  .sub-title::selection {
+    background: $white;
+    color: $brand-400;
+  }
+}
+
+.buttons {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.6rem;
+}
+
+.button-signup,
+.button-info {
+  width: max-content;
+  height: 4.8rem;
+  padding: 0 2rem;
+  border-radius: 99.9rem;
+  font-family: $ubuntu;
+  font-size: 1.6rem;
+  font-weight: 700;
+  transition: 0.2s;
+}
+
+.button-signup {
+  background: $white;
+  color: $brand-400;
+  opacity: 0;
+  animation: show-button 0.4s forwards 0.6s;
+}
+
+.button-info {
+  background: transparent;
+  border: 0.15rem solid $dark-300;
+  color: $dark-300;
+  opacity: 0;
+  animation: show-button 0.4s forwards 0.8s;
+}
+
+@media (min-width: 768px) {
+  .intro {
+    height: calc(504px - 48px);
+  }
+
+  .apresentation {
+    .title {
+      font-size: 6.4rem;
+    }
+
+    .sub-title {
+      font-size: 2rem;
+    }
+  }
+
+  .button-signup:hover {
+    background: #ffffff75;
+    color: $white;
+  }
+
+  .button-info:hover {
+    background: $white;
+    border-color: $white;
+    color: $brand-400;
+  }
+}
+
+@keyframes show-text {
+  from {
+    opacity: 0;
+    scale: 0.8;
+  }
+  to {
+    opacity: 1;
+    scale: 1;
+  }
+}
+
+@keyframes show-button {
+  from {
+    opacity: 0;
+    transform: translateY(10rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
