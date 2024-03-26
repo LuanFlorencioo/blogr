@@ -1,0 +1,94 @@
+@import "../../styles/colors.scss";
+@import "../../styles/fonts.scss";
+
+.not-found-page {
+  width: 100%;
+  height: 100vh;
+  padding: 0 2.4rem;
+  background-image: url("../../../assets/bg-pattern-not-found.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content {
+  width: 100%;
+  max-width: 40rem;
+  padding: 4rem;
+  background-image: url("../../../assets/bg-pattern-circles.svg"),
+    linear-gradient(to bottom, $brand-600, $brand-700);
+  background-repeat: no-repeat;
+  background-position: bottom center, center center;
+  background-size: cover;
+  border-radius: 0 10rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4rem;
+  opacity: 0;
+  animation: show-error 0.4s forwards 0.2s;
+}
+
+.status-code {
+  font-family: $ubuntu;
+  font-size: 6.4rem;
+  font-weight: 700;
+  color: $white;
+
+  &::selection {
+    background: $white;
+    color: $brand-400;
+  }
+}
+
+.message {
+  max-width: 28rem;
+  margin-bottom: -2rem;
+  font-family: $overpass;
+  font-size: 1.8rem;
+  font-weight: 500;
+  text-align: center;
+  color: $white;
+
+  &::selection {
+    background: $white;
+    color: $brand-400;
+  }
+}
+
+.button-return {
+  width: max-content;
+  height: 4rem;
+  padding-inline: 2.4rem;
+  background: transparent;
+  border: 0.15rem solid $dark-300;
+  border-radius: 99.9rem;
+  font-family: $ubuntu;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: $dark-300;
+  transition: 0.4s;
+
+  @media (min-width: 768px) {
+    &:hover {
+      background: $white;
+      border-color: $white;
+      color: $brand-400;
+    }
+  }
+}
+
+@keyframes show-error {
+  from {
+    opacity: 0;
+    transform: scale(0);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
